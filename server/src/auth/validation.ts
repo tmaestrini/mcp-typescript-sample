@@ -70,7 +70,7 @@ async function isValidToken(token: string): Promise<{ isValid: boolean; payload?
         // Validate the token signature using JWKS from the issuer
         // Reference (needs slight adjustments): https://www.voitanos.io/blog/validating-entra-id-generated-oauth-tokens/
         const client = new JwksClient({
-            jwksUri: `${(decodedTokenInfo.payload as jwt.JwtPayload).issuer}//discovery/v2.0/keys`,
+            jwksUri: `${issuer}/discovery/v2.0/keys`,
             requestHeaders: {},
             timeout: 30000 // 30 seconds
         });

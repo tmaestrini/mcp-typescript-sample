@@ -17,7 +17,7 @@ export default class TokenAcquisitionHelper {
      * References: https://github.com/Azure/azure-sdk-for-js/blob/main/sdk/identity/identity/samples/AzureIdentityExamples.md#authenticating-a-service-principal-with-a-client-secret
      * @returns 
      */
-    async acquireTokenInteractively(): Promise<string> {
+    acquireTokenInteractively = async (): Promise<string> => {
         return new Promise<string>(async (resolve, reject) => {
 
             const credential = new InteractiveBrowserCredential({
@@ -45,7 +45,7 @@ export default class TokenAcquisitionHelper {
      * References: https://github.com/Azure/azure-sdk-for-js/blob/main/sdk/identity/identity/samples/AzureIdentityExamples.md#authenticating-a-service-principal-with-a-client-secret
      * @returns 
      */
-    async acquireTokenWithServicePrincipal(): Promise<string> {
+    acquireTokenWithServicePrincipal = async (): Promise<string> => {
         return new Promise<string>(async (resolve, reject) => {
             try {
                 const credential = new ClientSecretCredential(
