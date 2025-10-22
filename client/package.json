@@ -1,0 +1,23 @@
+{
+  "scripts": {
+    "start": "npx -y tsx src/main.ts client",
+    "build": "tsc",
+    "type-check": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@ai-sdk/openai": "^2.0.49",
+    "@azure/identity": "^4.13.0",
+    "@modelcontextprotocol/sdk": "^1.20.0",
+    "ai": "^5.0.68",
+    "dotenv": "^16.3.1",
+    "express": "^5.1.0",
+    "ollama-ai-provider-v2": "^1.5.0",
+    "open": "^10.2.0",
+    "ws": "^8.18.3"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.3",
+    "@types/node": "^24.7.0",
+    "typescript": "^5.9.3"
+  }
+}
