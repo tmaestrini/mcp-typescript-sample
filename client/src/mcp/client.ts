@@ -6,7 +6,7 @@ import loadEnvironmentDefinitions from '../bootstrap';
 
 loadEnvironmentDefinitions();
 
-export default async function client(userToken: string): Promise<MCPClient> {
+export async function client(userToken: string): Promise<MCPClient> {
     try {
         let client: MCPClient;
 

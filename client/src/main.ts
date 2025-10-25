@@ -3,7 +3,7 @@ import { experimental_MCPClient as MCPClient, ModelMessage, stepCountIs, streamT
 import { openai } from '@ai-sdk/openai';
 import { createOllama } from 'ollama-ai-provider-v2';
 import TokenAcquisitionHelper from './utils/TokenAcquisitionHelper';
-import MCPClientFactory from './mcp/client';
+import { client as MCPClientFactory } from './mcp/client';
 
 const terminal = readline.createInterface({
     input: process.stdin,
@@ -16,16 +16,16 @@ let client: MCPClient;
 async function main() {
 
     process.stdout.write(`🧠 Simple console application\n`);
-    
+
     try {
         process.stdout.write(`Acquiring an access token from Entra ID... `);
-        
+
         // Acquire token with interactive authentication for demonstration purposes; 
         // in production consider using the token from your app's authentication context
         // (e.g., access token from an authenticated user session)
         const userToken = await (new TokenAcquisitionHelper().acquireTokenInteractively());
         process.stdout.write(`✅ ok\n`);
-        
+
         // Create a MCP client to handle communication with the remote MCP server
         client = await MCPClientFactory(userToken);
 
