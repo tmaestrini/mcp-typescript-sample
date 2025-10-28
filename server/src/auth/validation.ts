@@ -48,8 +48,7 @@ export default async function authorizeRequest(req: express.Request, res: expres
 
 /**
  * Validates the JWT token that comes from Entra ID.
- * NOTE: When validating an Entra ID token, the signature check can not be done
- * Therefore, the `jwks-rsa` library is not used here.
+ * The `jwks-rsa` library is used to retrieve the signing keys.
  * 
  * @param token - The JWT token to validate.
  * @returns A promise that resolves to an object with validation result and payload.
