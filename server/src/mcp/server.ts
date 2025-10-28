@@ -35,7 +35,7 @@ server.registerTool(
         title: 'Secured Backend API from Microsoft Graph wito call all users in the user\'s tenant',
         description: 'Calls a secured backend API using authentication via access token from Microsoft Entra ID. The response contains a list of all users in the user\'s tenant.',
         inputSchema: { companyName: z.string().optional().describe('The company name associated with the tenant') },
-        outputSchema: { result: z.string(), authenticated: z.boolean(), userData: z.any().optional() }
+        outputSchema: { result: z.string(), userData: z.any().optional() }
     },
     async ({ companyName }) => {
         try {
@@ -59,7 +59,6 @@ server.registerTool(
 
             const output = {
                 result: `Secured API call processed message: "${companyName}" with data: ${JSON.stringify(apiResponse?.value)}`,
-                authenticated: true,
                 userData: apiResponse.value
             };
 
